@@ -1,0 +1,206 @@
+Contents:
+
+1.what is Components and props ?
+
+2.Components Examples
+
+3.props Examples
+
+*************************************************************************************************************************
+
+what is component?
+
+===>A component is a piece of the UI (User Interface)
+
+===>ஒவ்வொன்றையும் நாம் ஒவ்வொரு Event என அழைப்போம்.
+    அதாவது click,Open new tab,Type writing,mouseover.
+    அதேபோல் ஒவ்வொன்றையும் ஒரு component என்று அழைப்போம்.
+    
+    Example: Cake or Chocklet pieces
+    
+    Example: Home    Login   Signup   Dashboard  இவை அனைத்தும் ஒரு தனித்தனி component என்று சொல்லலாம்.
+
+    Best Exmple : War ல் தனித்தனி Team ஆக இருப்பார்கள்.இதனைத்தான் component என்று கூறுவோம்.
+
+    ஏறக்குறைய ஒரு function போல.
+
+===>ஒரு React file க்குள் எண்ணற்ற componentகள் இருக்கலாம் அல்லது உருவாக்கலாம்.
+          ஏன் இவ்வாறு செய்கிறோம் என்றால் நமக்கு எந்த component ஐ மாற்ற வேண்டுமோ அதை மட்டும் மாற்றலாம்.
+
+===>class ஐ வைத்து எழுதும் போது அதனை class component என்று அழைப்போம்.அதேபோல்
+    function ஐ வைத்து எழுதும் போது அதனை function component என்று அழைப்போம்.
+
+===>ஒரு component ஆனது HTML element ஐ  செய்யும்.
+
+*************************************************************************************************************************
+
+what is props?
+
+===>Props are arguments passed into React components.
+    property of a component = props 
+
+    ஒரு component க்கு data ஐ அனுப்பினால் அதனை props என்போம்.
+    data ஐ ஒரு இடத்தில் இருந்து இன்னொரு இடத்திற்கு அனுப்புதல் மாதிரி.
+
+===>props stands for /data/properties/parameters/arguments எல்லாம் ஒன்றுதான்.
+
+*************************************************************************************************************************
+
+1.Basic Examples
+
+
+// Example 1:
+const App = () => {
+  return (
+    <>
+      <div>
+        <p>Welcome To React World!</p>
+      </div>   
+    </>
+  )
+}
+
+export default App    
+
+// Screen ல் Welcome To React World! என்று output வரும்.
+
+*************************************************************************************************************************
+
+// Example 2:
+function App() {
+  console.log("Hello Mr.Prabhakaran")
+  return (
+    <>
+      <div>
+        <p>Welcome To React World!</p>
+      </div>   
+    </>
+  )
+}
+
+export default App
+
+// Screen ல் Welcome To React World! என்று output வரும்.
+// console ல் Hello Mr.Prabhakaran என்று output வரும்.
+
+*************************************************************************************************************************
+
+// Example 3:
+function App() {
+  const now = new Date();
+  console.log(now);
+  return (
+    <>
+      <div>
+        <p>Welcome To React World!</p>
+      </div>   
+    </>
+  )
+}
+
+export default App
+
+// Screen ல் Welcome To React World! என்று output வரும்.
+// console ல் Current Date & Time output ஆக வரும்.
+
+*************************************************************************************************************************
+
+// Example 4:
+function App() {
+  const now = new Date();
+
+  return (
+    <>
+      <div>
+        <p>Welcome To React World! it is {now.toString()}</p>
+      </div>   
+    </>
+  )
+}
+
+export default App
+
+// Screen ல் Welcome To React World! என்று output வரும்.அதனுடன் Current Date & Time output ஆக வரும்.
+
+*************************************************************************************************************************
+
+// Example 5:
+function App() {
+  const now = new Date();
+  const a = 10;
+  const b = 65;
+
+  return (
+    <>
+      <div>
+        <p>Welcome To React World! it is {now.toString()}</p>
+        <p>The output is {a+b}</p>
+      </div>   
+    </>
+  )
+}
+
+export default App
+
+// Screen ல் Welcome To React World! என்று output வரும்.அதனுடன் Current Date & Time output ஆக வரும்.
+// மேலும் The output is 75 என்று வரும்.
+
+*************************************************************************************************************************
+
+// Example 6:function component
+function Hello() {
+  return (
+    <p>Hai Function Component</p>
+  )
+}
+function App() {
+  return (
+    <>
+      <div>
+        <h1>Welcome To React World!</h1>
+        < Hello />
+        < Hello />
+        < Hello />
+      </div>   
+    </>
+  )
+}
+
+export default App
+
+// Screen ல் Welcome To React World! என்று output வரும்.அதனுடன் "Hai Function Component" என்று மூன்று முறை output ஆக வரும்.
+// மேற்கண்டவாறு function component ஐ பயன்படுத்தலாம்.
+// இதன் மூலம் ஒரே ஒரு function component ஐ உருவாக்கி நமக்கு எத்தனை முறை தேவையோ அல்லது எண்ணற்ற முறை அதனை நாம் பயன்படுத்திக் கொள்ளலாம்.
+// அதாவது reuse செய்யலாம்.
+
+*************************************************************************************************************************
+
+// Example 7:function component and props using
+function Hello(props) {
+  console.log(props);
+  return (
+    <p>Hai Function Component {props.username}</p>
+  )
+}
+function App() {
+  const user1 = "Prabha";
+  const user2 = "Karan"
+  return (
+    <>
+      <div>
+        <h1>Welcome To React World!</h1>
+        < Hello username = {user1} />
+        < Hello username = {user2}/>
+         </div>   
+    </>
+  )
+}
+
+export default App
+
+// Screen ல் Welcome To React World! என்று output வரும்.
+// அதனுடன் "Hai Function Component Prabha" என்று output வரும்.
+// அதனுடன் "Hai Function Component Karan" என்று output வரும்.
+// console ல் {username: 'Prabha'} {username: 'Karan'} output ஆக வரும்.
+
+*************************************************************************************************************************
